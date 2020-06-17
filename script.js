@@ -1,4 +1,7 @@
 var creaBtn = document.getElementById('creaBiglietto');
+
+var annullaBtn = document.getElementById('annullaBiglietto');
+
 creaBtn.addEventListener("click", function () {
   var prezzoTotale;
   var prezzoKm = 0.21;
@@ -30,7 +33,7 @@ creaBtn.addEventListener("click", function () {
   document.getElementById('carrozza').innerHTML = carrozza;
   document.getElementById('prezzoBiglietto').innerHTML = prezzoScontato;
   document.getElementById('categoriaPasseggero').innerHTML = categoria;
-
+  document.getElementById('tabellaBiglietto').className = "show";
 
   console.log(nome);
   console.log(numeroTreno);
@@ -38,4 +41,11 @@ creaBtn.addEventListener("click", function () {
   console.log(prezzoTotale);
   console.log(categoria);
 
-})
+});
+
+annullaBtn.addEventListener("click", function(){
+  document.getElementById('tabellaBiglietto').className = "hidden";
+  document.getElementById('nome').value = "";
+  document.getElementById('km').value = "";
+  document.getElementById('categoria').value = "";
+});
